@@ -1,6 +1,7 @@
 import axios from 'axios';
 // import fs from 'fs';
-const baseURL: string = 'https://some-domain.com/api/';
+// if(process.env.NODE_ENV === 'development') 
+const baseURL: string = process.env.VUE_APP_BASE_API;
 const service: any = axios.create({
   timeout: 5000
 });

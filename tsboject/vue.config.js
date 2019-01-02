@@ -6,7 +6,7 @@ module.exports = {
         proxy: {
             //配置跨域
             '/api': {
-                target: "http://qiaoyou.0578app.com",
+                target: "https://www.baidu.com",
                 ws: true,
                 changOrigin: true,
                 pathRewrite: {
@@ -14,5 +14,15 @@ module.exports = {
                 }
             }
         }
-    }
+    },
+    configureWebpack: config => {
+        config.resolve.alias.vue$ = 'vue/dist/vue.esm.js'
+        config.module.rules.push({
+            test: /\.html$/,
+            use: {
+                loader: 'html-loader',
+            }
+        }, )
+
+    },
 }
