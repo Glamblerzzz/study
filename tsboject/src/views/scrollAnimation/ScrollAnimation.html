@@ -1,0 +1,5 @@
+  <div class="scroll">
+    <div v-for="(item,index) in lineList" :key="index" class="normal" >
+      <div :class="`line ${index === 1?'main':''}${index === 0?'complate':''}${index === 2?'ready':''}`">{{item}}</div>
+    </div>
+  </div>

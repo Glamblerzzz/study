@@ -1,0 +1,269 @@
+$shadow: #ddd;
+$shadow-main: 0rem 0rem 0.3rem #ddd;
+$shadow-complate: 0rem 0rem 0.1rem #ddd;
+$shadow-ready: 0rem 0.05rem 0.1rem #ddd;
+$width-normal: 4.7rem;
+$width-main: 5rem;
+$font-normal: 0.3rem;
+$font-main: 0.4rem;
+$height-normal: 0.8rem;
+$height-main: 0.6rem;
+
+.scroll {
+  position: relative;
+  width: 7.5rem;
+  font-size: $font-normal;
+
+  .normal {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    .line {
+      height: $height-main;
+      width: $width-normal;
+      font-size: $font-normal;
+      line-height: $height-main;
+      box-shadow: $shadow-ready;
+    }
+
+    .main {
+      top: 0.7rem;
+      width: $width-main;
+      height: $height-normal;
+      line-height: $height-normal;
+      font-size: $font-main;
+      box-shadow: $shadow-main;
+      animation: main 5s infinite;
+      position: absolute;
+    }
+
+    .complate {
+      top: 0.1rem;
+      position: absolute;
+      box-shadow: $shadow-complate;
+      animation: complate 5s infinite;
+    }
+
+    .ready {
+      top: 1.5rem;
+      position: absolute;
+      animation: ready 5s infinite;
+    }
+
+    @keyframes main {
+      0% {}
+
+      29% {
+        width: $width-main;
+        height: $height-normal;
+        line-height: $height-normal;
+        font-size: $font-main;
+        top: 0.7rem;
+        box-shadow: $shadow-main;
+        opacity: 1;
+      }
+
+      33% {
+        width: $width-normal;
+        height: $height-main;
+        line-height: $height-main;
+        font-size: $font-normal;
+        box-shadow: $shadow-complate;
+        top: 0.1rem;
+        opacity: 1;
+      }
+
+      62% {
+        width: $width-normal;
+        height: $height-main;
+        line-height: $height-main;
+        font-size: $font-normal;
+        box-shadow: $shadow-complate;
+        top: 0.1rem;
+        opacity: 1;
+      }
+
+      66% {
+        width: $width-normal;
+        height: $height-main;
+        line-height: $height-main;
+        font-size: $font-normal;
+        box-shadow: $shadow-complate;
+        top: -0.4rem;
+        opacity: 0;
+      }
+
+      67% {
+        width: $width-normal;
+        height: $height-main;
+        line-height: $height-main;
+        top: 1.5rem;
+        box-shadow: $shadow-ready;
+        opacity: 0;
+      }
+
+      96% {
+        width: $width-normal;
+        height: $height-main;
+        top: 1.5rem;
+        line-height: $height-main;
+        box-shadow: $shadow-ready;
+        opacity: 0;
+        font-size: $font-normal
+      }
+
+      100% {
+        top: 0.7rem;
+        width: $width-main;
+        height: $height-normal;
+        line-height: $height-normal;
+        font-size: $font-main;
+        box-shadow: $shadow-main;
+        opacity: 1;
+      }
+    }
+
+    @keyframes ready {
+      0% {
+        opacity: 0;
+      }
+
+      29% {
+        width: $width-normal;
+        height: $height-main;
+        top: 1.5rem;
+        opacity: 0;
+      }
+
+      33% {
+        top: 0.7rem;
+        width: $width-main;
+        height: $height-normal;
+        line-height: $height-normal;
+        font-size: $font-main;
+        box-shadow: $shadow-main;
+        opacity: 1;
+      }
+
+      62% {
+        top: 0.7rem;
+        width: $width-main;
+        height: $height-normal;
+        line-height: $height-normal;
+        font-size: $font-main;
+        box-shadow: $shadow-main;
+        opacity: 1;
+      }
+
+      66% {
+        width: $width-normal;
+        height: $height-main;
+        top: 0.1rem;
+        font-size: $font-normal;
+        line-height: $height-main;
+        box-shadow: $shadow-complate;
+        opacity: 1;
+      }
+
+      95% {
+        width: $width-normal;
+        height: $height-main;
+        line-height: $height-main;
+        font-size: $font-normal;
+        top: 0.1rem;
+        box-shadow: $shadow-complate;
+        opacity: 1;
+      }
+
+      99% {
+        width: $width-normal;
+        height: $height-main;
+        line-height: $height-main;
+        font-size: $font-normal;
+        top: -0.5rem;
+        box-shadow: $shadow-ready;
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes complate {
+      0% {}
+
+      29% {
+        width: $width-normal;
+        height: $height-main;
+        line-height: $height-main;
+        font-size: $font-normal;
+        top: 0.1rem;
+        box-shadow: $shadow-complate;
+        opacity: 1;
+      }
+
+      33% {
+        width: $width-normal;
+        height: $height-main;
+        line-height: $height-main;
+        font-size: $font-normal;
+        box-shadow: $shadow-complate;
+        top: -0.5rem;
+        opacity: 0;
+      }
+
+      34% {
+        width: $width-normal;
+        height: $height-main;
+        line-height: $height-main;
+        font-size: $font-normal;
+        box-shadow: $shadow-ready;
+        top: 1.5rem;
+        opacity: 0;
+      }
+
+      63% {
+        width: $width-normal;
+        height: $height-main;
+        line-height: $height-main;
+        font-size: $font-normal;
+        box-shadow: $shadow-complate;
+        top: 1.5rem;
+        opacity: 0;
+      }
+
+      67% {
+        top: 0.7rem;
+        width: $width-main;
+        height: $height-normal;
+        line-height: $height-normal;
+        font-size: $font-main;
+        box-shadow: $shadow-main;
+        opacity: 1;
+      }
+
+      96% {
+        top: 0.7rem;
+        width: $width-main;
+        height: $height-normal;
+        line-height: $height-normal;
+        font-size: $font-main;
+        box-shadow: $shadow-main;
+        opacity: 1;
+      }
+
+      100% {
+        width: $width-normal;
+        height: $height-main;
+        line-height: $height-main;
+        font-size: $font-normal;
+        top: 0.1rem;
+        box-shadow: $shadow-complate;
+        opacity: 1;
+      }
+    }
+  }
+}

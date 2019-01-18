@@ -1,7 +1,11 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
-import Test from './views/test/Test';
+import Scroll from '@/views/scrollAnimation/ScrollAnimation';
+// 引入子路由
+import Son from './router/son';
+// 子路由的视图
+import frame from '@/frame/frame.vue';
 
 Vue.use(Router);
 
@@ -17,16 +21,17 @@ export default new Router({
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () =>
-        import(/* webpackChunkName: "about" */ './views/About.vue')
+      component: () => import('./views/About.vue')
     },
     {
-      path: '/test',
-      name: 'test',
-      component: Test
+      path: '/news',
+      component: frame,
+      children: Son
+    },
+    {
+      path: '/scroll',
+      name: 'Scroll',
+      component: Scroll
     }
   ]
 });

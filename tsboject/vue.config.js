@@ -6,23 +6,40 @@ module.exports = {
         proxy: {
             //配置跨域
             '/api': {
-                target: "https://www.baidu.com",
+                target: "https://www.bilibili.com/",
                 ws: true,
                 changOrigin: true,
                 pathRewrite: {
                     '^/api': '/'
+                }
+            },
+            '/test': {
+                target: "https://www.baidu.com",
+                ws: true,
+                changOrigin: true,
+                pathRewrite: {
+                    '^/test': '/'
                 }
             }
         }
     },
     configureWebpack: config => {
         config.resolve.alias.vue$ = 'vue/dist/vue.esm.js'
-        config.module.rules.push({
-            test: /\.html$/,
-            use: {
-                loader: 'html-loader',
-            }
-        }, )
-
+        // config.module.rules.push({
+        //     test: /\.html$/,
+        //     use: {
+        //         loader: 'html-loader',
+        //     }
+        // }, )
     },
+
+    // 链式操作添加loader
+    chainWebpack: config => {
+        config.module
+            .rule('html')
+            .test(/\.html$/)
+            .use('html-loader')
+            .loader('html-loader')
+            .end()
+    }
 }

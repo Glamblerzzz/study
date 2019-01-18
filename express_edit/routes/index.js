@@ -5,7 +5,7 @@ var test = new Test()
 /* GET home page. */
 // 放入页面
 router.get('/', function(req, res) {
-  var path = __dirname.substring(0,__dirname.length-7) + '/public/index.htm'
+  var path = __dirname.substring(0,__dirname.length-7) + '/public/index.html'
   res.sendFile(path);
 });
 router.get('/Interface/update', function (req, res, next) {

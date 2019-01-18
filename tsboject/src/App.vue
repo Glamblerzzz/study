@@ -7,6 +7,12 @@
     <router-view/>
   </div>
 </template>
+<script lang="ts">
+import Vue from 'vue';
+export default Vue.extend({
+
+});
+</script>
 
 <style lang="scss">
 #app {
@@ -18,7 +24,7 @@
   font-size: 0.26rem
 }
 #nav {
-  padding: 30px;
+  padding: 0.3rem;
   a {
     font-weight: bold;
     color: #2c3e50;
