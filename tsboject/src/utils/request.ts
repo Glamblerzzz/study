@@ -2,8 +2,9 @@ import axios from 'axios';
 // import fs from 'fs';
 const baseURL: string = process.env.VUE_APP_BASE_API;
 const service: any = axios.create({
-  timeout: 5000
-});
+    timeout: 5000
+  });
+
 
 // 请求拦截
 service.interceptors.request.use(

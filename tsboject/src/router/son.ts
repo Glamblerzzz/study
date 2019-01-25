@@ -1,7 +1,8 @@
-import Test from '../views/test/Test';
+import Test from '@/views/test/Test';
 export default [
   {
-    path: 'test',
+    path: 'son',
+    name: 'Son',
     component: Test
   }
 ];

@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
 import Scroll from '@/views/scrollAnimation/ScrollAnimation';
+import ScrollT from '@/views/scrollAnimationTs/ScrollAnimationTs.vue';
 // 引入子路由
 import Son from './router/son';
 // 子路由的视图
@@ -24,7 +25,7 @@ export default new Router({
       component: () => import('./views/About.vue')
     },
     {
-      path: '/news',
+      path: '/news/',
       component: frame,
       children: Son
     },
@@ -32,6 +33,11 @@ export default new Router({
       path: '/scroll',
       name: 'Scroll',
       component: Scroll
-    }
+    },
+    {
+      path: '/scrollT',
+      name: 'ScrollT',
+      component: ScrollT
+    },
   ]
 });
