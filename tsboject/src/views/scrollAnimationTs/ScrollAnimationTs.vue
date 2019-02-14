@@ -8,6 +8,10 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Component, Prop, Watch, Model } from 'vue-property-decorator';
+interface TestType {
+    name: string;
+    age: number;
+}
 @Component({
     name: 'ScrollAnimationTs'
 })
@@ -15,16 +19,21 @@ export default class ScrollAnimationTs extends Vue {
     @Prop() private list!: string[];
     private mylist = this.list;
     private isShow: boolean[] = [];
-    private created() {
+    private async created() {
         this.mylist = ['aaaa', 'bbbb', 'cccc'];
         for (const iterator of this.mylist) {
             this.isShow.push(iterator === 'aaaa');
         }
-        this.isShow.pop();
+        this.action({name: 'aaaa', age: 2, });
+        // this.isShow.pop();
+    }
+    private action(data: TestType): void {
+        // console.log(data);
+        alert(data.name);
     }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 $base: #f56;
     .line{
         background-color: $base;

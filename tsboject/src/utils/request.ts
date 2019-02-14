@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {Basic} from '@/interface/basic';
 // import fs from 'fs';
 const baseURL: string = process.env.VUE_APP_BASE_API;
 const service: any = axios.create({
