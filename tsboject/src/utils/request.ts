@@ -1,6 +1,11 @@
 import axios from 'axios';
 import {Basic} from '@/interface/basic';
 // import fs from 'fs';
+interface ErrMsg {
+  code: number;
+  data?: any;
+  msg: string;
+}
 const baseURL: string = process.env.VUE_APP_BASE_API;
 const service: any = axios.create({
     timeout: 5000
@@ -18,7 +23,7 @@ service.interceptors.request.use(
     return config;
   },
   (error: any) => {
-    Promise.reject(error);
+    return Promise.reject(error);
   }
 );
 
@@ -26,14 +31,24 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   (response: any) => {
     const res: any = response.data;
-    if (response.status === 429) {
-      return Promise.reject('系统繁忙，稍后再试');
-    } else {
-      return Promise.resolve(res);
-    }
+    return Promise.resolve(res);
   },
   (error: any) => {
-    return Promise.reject(error);
+    let info: ErrMsg;
+    const { status, statusText, data } = error.response;
+    if (!error.response) { // 网络超时
+      info = {
+        code: 5000,
+        msg: 'Network Error'
+      };
+    } else {
+      info = {
+        code: status,
+        data,
+        msg: statusText
+      };
+    }
+    return Promise.reject(info);
   }
 );
 

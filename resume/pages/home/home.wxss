@@ -4,3 +4,11 @@ page{
     height: 100%;
     background-color: #fff
 }
+.title{
+    height: 80rpx;
+    width: 100%;
+    color: #999;
+    text-align: center;
+    font-size: 48rpx;
+    line-height: 80rpx;
+}

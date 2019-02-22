@@ -1,5 +1,6 @@
 export interface Basic {
-    method: string;
-    data: object;
     url: string;
+    params: object;
+    headers: string;
+    data?: object;
 }
